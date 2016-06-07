@@ -6,3 +6,14 @@
 <% else %>
   <%= link_to "Sign in with Github", github_login_path %>
 <% end %>
+
+
+<p><%= current_user.name %></p>
+
+<div class="format-profile-pic">
+  <%= image_tag current_user.image, class: "profile"  %>
+</div>
+
+<p><%= current_user.followers_url %></p>
+<p><%= current_user.following_url %></p>
+<p><%= current_user.location %></p>

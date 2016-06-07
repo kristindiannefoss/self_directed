@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   def create
     @user = User.find_by(id: auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     if @user

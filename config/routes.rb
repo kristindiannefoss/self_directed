@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "users#show"
+  root "welcome#show"
 
   get "/auth/github", as: :github_login
 
@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :repos, only: [:index, :show]
+  resources :welcome, only: [:show]
 end
