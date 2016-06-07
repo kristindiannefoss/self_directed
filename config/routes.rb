@@ -1,0 +1,11 @@
+Rails.application.routes.draw do
+  root "users#show"
+
+  get "/auth/github", as: :github_login
+
+  get "/auth/github/callback", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
+
+  resources :users, only: [:index, :show]
+  resources :repos, only: [:index, :show]
+end
