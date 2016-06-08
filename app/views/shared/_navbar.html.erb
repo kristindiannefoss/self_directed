@@ -9,7 +9,7 @@
         <i class="fa fa-bars"></i>
       </button>
       <a class="navbar-brand page-scroll" href="#page-top">
-        <i class="fa fa-play-circle"></i>  <span class="light">I'm good at this<a class="page-scroll" href="https://www.linkedin.com/in/kris-foss-a9683617">Hire Me</a></span>
+        <i class="fa fa-play-circle"></i>  <span class="light"><a class="page-scroll" href=""></a></span>
       </a>
     </div>
 
@@ -21,7 +21,7 @@
           <a href="#page-top"></a>
         </li>
         <% if current_user %>
-          Hello, <%= current_user.name %>
+           <%= link_to "Logout #{current_user.name}", logout_path %>
         <% else %>
         <li>
           <%#= link_to "Login with Google+", google_login_path %>
