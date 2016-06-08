@@ -1,8 +1,21 @@
 
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
 
-<% if current_user %>
-  Hello, <%= current_user.user_name %>
-  <%= link_to 'Log Out', logout_path %>
-<% else %>
-  <%= link_to "Sign in with Github", github_login_path %>
-<% end %>
+                    <h1 class="brand-heading">Tough Love</h1>
+                    <p class="intro-text">Because sometimes you need it.<br>Someone on your shoulder to tell it like it is.</p>
+
+                    <% if current_user %>
+                      <%= link_to "Let's Do This", user_path(current_user) %>
+                    <% else %>
+                    <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
