@@ -4,6 +4,7 @@ class WeatherService
   attr_reader :connection
 
   def initialize
+
     @connection = Faraday.new(:url => 'http://api.openweathermap.org/data/2.5')
   end
 
