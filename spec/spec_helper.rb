@@ -5,39 +5,39 @@ require 'shoulda-matchers'
 require 'capybara'
 require 'launchy'
 require 'pry'
-require 'vcr'
+# require 'vcr'
 
 SimpleCov.start("rails")
 
-VCR.configure do |c|
-  c.cassette_library_dir = "spec/cassettes"
-  c.hook_into :webmock
-  c.configure_rspec_metadata!
-end
-
-RSpec.configure do |config|
-
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-
-  config.expect_with :rspec do |expectations|
-    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-  end
-
-end
+# VCR.configure do |c|
+#   c.cassette_library_dir = "spec/cassettes"
+#   c.hook_into :webmock
+#   c.configure_rspec_metadata!
+# end
+#
+# RSpec.configure do |config|
+#
+#   config.before(:suite) do
+#     DatabaseCleaner.clean_with(:truncation)
+#   end
+#
+#   config.before(:each) do
+#     DatabaseCleaner.strategy = :transaction
+#   end
+#
+#   config.before(:each) do
+#     DatabaseCleaner.start
+#   end
+#
+#   config.after(:each) do
+#     DatabaseCleaner.clean
+#   end
+#
+#   config.expect_with :rspec do |expectations|
+#     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+#   end
+#
+# end
 
 OmniAuth.config.test_mode = true
 OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
