@@ -31,6 +31,10 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'simplecov'
+  gem 'test-unit'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.4'
+  gem 'shoulda-matchers'
 end
 
 group :production do
@@ -39,6 +43,5 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
