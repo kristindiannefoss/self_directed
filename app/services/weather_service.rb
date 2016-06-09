@@ -4,18 +4,16 @@ class WeatherService
   attr_reader :connection
 
   def initialize
-    @connection = Faraday.new(url: 'http://api.openweathermap.org/data/2.5')
-    # connection.params["APPID"] = ENV["WEATHER_KEY"]
-    # @current_user = current_user
+
+    @connection = Faraday.new(:url => 'http://api.openweathermap.org/data/2.5')
   end
 
-  def info(city_name)
-    binding.pry
-    # parse(connection.get("weather", ["q=#{city_name}", "APPID="]))
-    parse(connection.get("/weather", {q: city_name, APPID: ""}))
-# conn.get '/nigiri', { :name => 'Maguro' }   # GET http://sushi.com/nigiri?name=Maguro
+  def temp_info(city_name)
+    response = parse(connection.get("weather?q=#{city_name}&APPID=#{ENV["WEATHER_KEY"]}"))
+    kelvin = response[:main][:temp]
+    fahrenheit = (1.8 * (kelvin - 273)) + 32
+    fahrenheit.to_i
   end
-
 
   private
     def parse(response)

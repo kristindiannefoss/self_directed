@@ -11,12 +11,10 @@ describe 'WeatherService' do
 
   context "info" do
     it "brings in weather info" do
-      VCR.use_cassette("weather info") do
         @service = WeatherService.new
         weather_info = @service.info("Denver")
 
-        expect(weather_info[:main][:temp]).to eq("292.59")
-      end
+        expect(weather_info).to eq(62)
     end
   end
 

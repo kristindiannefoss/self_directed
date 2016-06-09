@@ -5,14 +5,8 @@ class NokogiriService
 
   attr_reader :noko_doc
 
-  def initialize
-    # require 'pry'; binding.pry
-    # @user = current_user
+  def initialize(current_user)
     @noko_doc = Nokogiri::HTML(open("https://github.com/#{current_user.user_name}"))
-  end
-
-  def find_me
-
   end
 
   def todays_commits

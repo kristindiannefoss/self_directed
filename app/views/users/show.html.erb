@@ -1,12 +1,42 @@
 
-<p><%= current_user.name %></p>
+<div class="container">
+  <div class="dash-chunk">
+    <div class="row">
+      <div class="inline-row">
 
-<div class="format-profile-pic">
-  <%= image_tag current_user.image, class: "profile"  %>
+        <div class="col-md-4 pic-thumb">
+          <div class="format-profile-pic">
+            <%= image_tag current_user.image, class: "profile"  %>
+          </div>
+        </div>
+
+        <div class="col-md-6 weather-widget">
+          <h2>Good <%= @greeting %> Padawan, <%= @name %></h2>
+
+          <p>It's <%= @temp %>°F in <%= current_user.location %></p>
+        </div>
+      </div>
+
+    </div> <!-- 1st row -->
+
+    <div class="row">
+      <div class="inline-row">
+
+        <div class="col-md-6 commits-widget">
+          <div class="commits">
+            <h2>Git Tracker</h2>
+            <p>
+              You have made <%= @commits %> commits today
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+
+        </div>
+
+      </div>
+
+    </div> <!-- 2nd row -->
+  </div>
 </div>
-
-
-<p><a href=<%= @user.create_following_url %>>Following</a></p>
-<p><a href=<%= @user.create_followers_url %>>Followers</a></p>
-
-<p><%= current_user.location %></p>
