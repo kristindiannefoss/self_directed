@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=78349e07d595ad8b249034c66e4e2303
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 09 Jun 2016 03:57:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=78349e07d595ad8b249034c66e4e2303"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"404","message":"Error: Not found city"}'
+    http_version: 
+  recorded_at: Thu, 09 Jun 2016 03:57:55 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=78349e07d595ad8b249034c66e4e2303&q=denver
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 09 Jun 2016 03:58:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '450'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=78349e07d595ad8b249034c66e4e2303&q=denver"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-104.98,"lat":39.74},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"base":"cmc stations","main":{"temp":292.19,"pressure":1005,"humidity":41,"temp_min":289.82,"temp_max":295.37},"wind":{"speed":0.56,"deg":161},"rain":{"1h":0.3},"clouds":{"all":68},"dt":1465444530,"sys":{"type":3,"id":35615,"message":0.003,"country":"US","sunrise":1465471895,"sunset":1465525639},"id":5419384,"name":"Denver","cod":200}'
+    http_version: 
+  recorded_at: Thu, 09 Jun 2016 03:58:17 GMT
+recorded_with: VCR 3.0.3

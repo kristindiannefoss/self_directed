@@ -1,19 +1,12 @@
 
-
-<% if current_user %>
-  Hello, <%= current_user.user_name %>
-  <%= link_to 'Log Out', logout_path %>
-<% else %>
-  <%= link_to "Sign in with Github", github_login_path %>
-<% end %>
-
-
 <p><%= current_user.name %></p>
 
 <div class="format-profile-pic">
   <%= image_tag current_user.image, class: "profile"  %>
 </div>
 
-<p><%= current_user.followers_url %></p>
-<p><%= current_user.following_url %></p>
+
+<p><a href=<%= @user.create_following_url %>>Following</a></p>
+<p><a href=<%= @user.create_followers_url %>>Followers</a></p>
+
 <p><%= current_user.location %></p>
