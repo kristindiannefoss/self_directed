@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/users/thisuser
+    uri: https://api.github.com/users/kristindiannefoss
     body:
       encoding: US-ASCII
       string: ''
@@ -10,34 +10,49 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - token
+      - token 87f3add921d2843c62815c638487b244f2cb0973
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       Server:
       - GitHub.com
       Date:
-      - Thu, 09 Jun 2016 02:04:58 GMT
+      - Thu, 09 Jun 2016 20:21:28 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '83'
+      Transfer-Encoding:
+      - chunked
       Status:
-      - 401 Unauthorized
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1465507288'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"57c626fc402b81430a4ead80ba0c7575"
+      Last-Modified:
+      - Thu, 19 May 2016 06:51:57 GMT
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - user
+      X-Oauth-Client-Id:
+      - a9f11acb9db816bd8590
       X-Github-Media-Type:
       - github.v3
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '59'
-      X-Ratelimit-Reset:
-      - '1465441498'
       Access-Control-Expose-Headers:
       - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
@@ -53,11 +68,14 @@ http_interactions:
       - deny
       X-Xss-Protection:
       - 1; mode=block
+      X-Served-By:
+      - 593010132f82159af0ded24b4932e109
       X-Github-Request-Id:
-      - 495F8509:1C0C2:14AA53C8:5758CECA
+      - 3F910F63:12715:B50E3DE:5759CFC7
     body:
       encoding: UTF-8
-      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
+      string: '{"login":"kristindiannefoss","id":15794034,"avatar_url":"https://avatars.githubusercontent.com/u/15794034?v=3","gravatar_id":"","url":"https://api.github.com/users/kristindiannefoss","html_url":"https://github.com/kristindiannefoss","followers_url":"https://api.github.com/users/kristindiannefoss/followers","following_url":"https://api.github.com/users/kristindiannefoss/following{/other_user}","gists_url":"https://api.github.com/users/kristindiannefoss/gists{/gist_id}","starred_url":"https://api.github.com/users/kristindiannefoss/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/kristindiannefoss/subscriptions","organizations_url":"https://api.github.com/users/kristindiannefoss/orgs","repos_url":"https://api.github.com/users/kristindiannefoss/repos","events_url":"https://api.github.com/users/kristindiannefoss/events{/privacy}","received_events_url":"https://api.github.com/users/kristindiannefoss/received_events","type":"User","site_admin":false,"name":"Kristin
+        Foss","company":null,"blog":null,"location":"Denver, Colorado","email":null,"hireable":true,"bio":null,"public_repos":35,"public_gists":6,"followers":18,"following":42,"created_at":"2015-11-11T03:20:46Z","updated_at":"2016-05-19T06:51:57Z"}'
     http_version: 
-  recorded_at: Thu, 09 Jun 2016 02:04:58 GMT
+  recorded_at: Thu, 09 Jun 2016 20:21:27 GMT
 recorded_with: VCR 3.0.3

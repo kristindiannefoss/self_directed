@@ -1,21 +1,15 @@
-# require 'rails_helper'
-#
-# RSpec.feature "GithubServices", type: :feature do
-#   pending "add some scenarios (or delete) #{__FILE__}"
-# end
 
 require 'rails_helper'
 
 describe 'WeatherService' do
-
-
   context "info" do
     it "brings in weather info" do
+      VCR.use_cassette("weather_info") do
         @service = WeatherService.new
-        weather_info = @service.info("Denver")
+        weather_info = @service.temp_info("Denver")
 
-        expect(weather_info).to eq(62)
+        expect(weather_info).to eq(89)
+      end
     end
   end
-
 end

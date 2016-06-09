@@ -24,25 +24,20 @@
         1,
         null,
         1,
+        null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         1,
         1,
-        0,
-        null,
-        null,
+        1,
+        1,
+        1,
         null,
         null,
         1,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -128,6 +123,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/Users/kfoss/turing/3module/projects/self_directed/app/controllers/welcome_controller.rb": [
@@ -139,6 +141,10 @@
         0
       ],
       "/Users/kfoss/turing/3module/projects/self_directed/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -185,8 +191,6 @@
         0,
         0,
         0,
-        0,
-        0,
         0
       ],
       "/Users/kfoss/turing/3module/projects/self_directed/app/services/nokogiri_service.rb": [
@@ -208,15 +212,9 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0
       ]
     },
-    "timestamp": 1465494872
+    "timestamp": 1465509130
   }
 }
