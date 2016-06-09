@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @name = @user.format_name
     @greeting = format_greating
     @temp = temp
+    @commits = current_user_todays_commits
     # binding.pry
   end
 
@@ -29,6 +30,11 @@ private
       greeting = "evening"
     end
     greeting
+  end
+
+  def current_user_todays_commits
+    noko_scrub = NokogiriService.new(current_user)
+    noko_scrub.todays_commits
   end
 
 end

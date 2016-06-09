@@ -19,11 +19,17 @@ img.profile {
 }
 
 .dash-chunk {
-  padding-top: 60px;
+  padding-top: 90px;
+}
+
+.inline-row {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .weather-widget {
-  background-color: #1b5c44;
+  border-color: #42dca3;
+  border-style: solid;
   border-radius: 6px;
   display: inline-block;
   text-align: center;
@@ -32,11 +38,35 @@ img.profile {
     padding: 20px;
     border: 0px;
     margin: 0px;
+    color: #42dca3;
+
   }
   h2 {
     padding: 20px;
     border: 0px;
     margin: 0px;
+    color: #42dca3;
+  }
 
+}
+
+.commits-widget {
+  border-color: #42dca3;
+  border-style: solid;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: center;
+
+  p {
+    padding: 20px;
+    border: 0px;
+    margin: 0px;
+    color: #42dca3;
+  }
+  h2 {
+    padding: 20px;
+    border: 0px;
+    margin: 0px;
+    color: #42dca3;
   }
 }
