@@ -14,7 +14,7 @@ describe 'WeatherService' do
         @service = WeatherService.new
         weather_info = @service.info("Denver")
 
-        expect(weather_info).to eq(290.81)
+        expect(weather_info).to eq(62)
     end
   end
 

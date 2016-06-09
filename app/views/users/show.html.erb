@@ -1,12 +1,37 @@
 
-<p><%= current_user.name %></p>
+<div class="container">
+  <div class="dash-chunk">
+    <div class="row">
 
-<div class="format-profile-pic">
-  <%= image_tag current_user.image, class: "profile"  %>
+      <div class="col-md-4 pic-thumb">
+        <div class="format-profile-pic">
+          <%= image_tag current_user.image, class: "profile"  %>
+        </div>
+      </div>
+
+      <div class="col-md-6 weather-widget">
+        <h2>Good <%= @greeting %> Padawan, <%= @name %></h2>
+
+        <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
+      </div>
+
+    </div> <!-- row -->
+
+    <p><a href=<%#= @user.create_following_url %>>Following</a></p>
+    <p><a href=<%#= @user.create_followers_url %>>Followers</a></p>
+
+  </div>
 </div>
 
-
-<p><a href=<%= @user.create_following_url %>>Following</a></p>
-<p><a href=<%= @user.create_followers_url %>>Followers</a></p>
-
-<p><%= current_user.location %></p>
+<!-- Download Section -->
+<section id="download" class="content-section text-center">
+    <div class="download-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Download Grayscale</h2>
+                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+            </div>
+        </div>
+    </div>
+</section>

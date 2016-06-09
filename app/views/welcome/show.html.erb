@@ -10,7 +10,7 @@
                     <p class="intro-text">Because sometimes you need it.<br>Someone on your shoulder to tell it like it is.</p>
 
                     <% if current_user %>
-                      <%= link_to "Let's Do This", user_path(current_user) %>
+                      <a href= "<%= dashboard_path(current_user) %>" class="btn btn-default btn-lg">Let's Do This</a>
                     <% else %>
                     <% end %>
 

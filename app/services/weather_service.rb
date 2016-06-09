@@ -7,10 +7,12 @@ class WeatherService
     @connection = Faraday.new(:url => 'http://api.openweathermap.org/data/2.5')
   end
 
-  def info(city_name)
-    parse(connection.get("weather?q=#{city_name}&APPID=#{ENV["WEATHER_KEY"]}"))[:main][:temp]
+  def temp_info(city_name)
+    response = parse(connection.get("weather?q=#{city_name}&APPID=#{ENV["WEATHER_KEY"]}"))
+    kelvin = response[:main][:temp]
+    fahrenheit = (1.8 * (kelvin - 273)) + 32
+    fahrenheit.to_i
   end
-
 
   private
     def parse(response)
