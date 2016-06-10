@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160610012908) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tasks", force: :cascade do |t|
     t.string   "description"
     t.string   "image_url"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160610012908) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "uid"
@@ -34,4 +37,5 @@ ActiveRecord::Schema.define(version: 20160610012908) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "tasks", "users"
 end
