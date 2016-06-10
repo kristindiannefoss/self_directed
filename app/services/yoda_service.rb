@@ -18,10 +18,10 @@ class YodaService
     response = (conn.get("/yoda?sentence=#{request}"))
     response.body
   end
+
   private
 
     def format(sentence)
       sentence.gsub(" ", "+")
     end
-
 end

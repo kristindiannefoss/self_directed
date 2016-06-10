@@ -4,20 +4,16 @@
     <div class="row">
       <div class="inline-row">
 
-        <div class=" ui-widget-content" id="draggable">
-          <div class="col-md-4 pic-thumb">
-            <div class="format-profile-pic ui-widget-content" id="draggable">
-              <%= image_tag current_user.image, class: "profile"  %>
-            </div>
+        <div class="col-md-4 pic-thumb">
+          <div class="format-profile-pic ui-widget-content" id="draggable">
+            <%= image_tag current_user.image, class: "profile"  %>
           </div>
         </div>
 
-        <div class=" ui-widget-content" id="draggable">
-          <div class="col-md-6 weather-widget">
-            <h2>Good <%= @greeting %> Padawan</h2>
+        <div class="col-md-6 weather-widget draggable ui-widget-content" id="draggable">
+          <h2>Good <%= @greeting %> Padawan</h2>
 
-            <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
-          </div>
+          <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
         </div>
       </div>
     </div>
@@ -27,8 +23,7 @@
     <div class="row">
       <div class="inline-row">
 
-        <div class=" ui-widget-content" id="draggable">
-          <div class="col-md-6 commits-widget">
+          <div class="col-md-6 commits-widget draggable ui-widget-content" id="draggable">
             <div class="commits">
               <h2>Git Tracker</h2>
               <p>
