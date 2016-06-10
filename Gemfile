@@ -16,6 +16,7 @@ gem 'omniauth-github'
 gem 'omniauth'
 gem 'nokogiri'
 gem 'hurley'
+gem 'unirest'
 
 
 group :development, :test do
