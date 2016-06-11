@@ -1,8 +1,8 @@
 
 <div class="container">
   <div class="dash-chunk">
-    <div class="row">
-      <div class="inline-row">
+
+    <div class="row"><!-- 1st row -->
 
         <div class="col-md-4 pic-thumb">
           <div class="circle format-profile-pic ui-widget-content" id="draggable">
@@ -15,20 +15,16 @@
 
           <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
         </div>
-      </div>
-    </div>
-
     </div> <!-- 1st row -->
 
-    <div class="row">
+
+    <div class="row"><!-- 2nd row -->
       <div class="inline-row">
 
           <div class="col-md-6 commits-widget draggable ui-widget-content" id="draggable">
             <div class="commits">
-              <h2>Git Tracker</h2>
-              <p>
-                You have made <%= @commits %> commits today
-              </p>
+              <h2><%= @commits %></h2>
+              <p>commits today</p>
             </div>
           </div>
 
@@ -37,7 +33,31 @@
         </div>
 
       </div>
+    </div>
+
+<div class="row"> <!-- 3rd row -->
+
+      <div class="inline-row">
+
+          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+            <div class="reminders">
+              <h2>To Dos</h2>
+
+                <% @tasks.each do |task| %>
+                <p> <%= get_yoda_speak(task.description) %> </p>
+                <% end %>
+
+            </div>
+          </div>
+
+        <div class="col-md-4">
+
+        </div>
+
+      </div>
+    </div>
 
     </div> <!-- 2nd row -->
   </div>
+</div>
 </div>

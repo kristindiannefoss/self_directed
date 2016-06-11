@@ -25,7 +25,6 @@ img.profile {
   behavior: url(PIE.htc);
   overflow: hidden;
   object-fit: cover;
-  border-radius: 10px;
   box-shadow: 5px 5px 30px #888888;
 }
 
@@ -44,6 +43,7 @@ img.profile {
   border-radius: 6px;
   display: inline-block;
   text-align: center;
+  background-color: transparent;
 
   p {
     padding: 20px;
@@ -62,10 +62,38 @@ img.profile {
 
 .commits-widget {
   border-color: #42dca3;
+  width: 300px;
+  height: 300px;
+  border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  background-color: #42dca3;
+  width: 300px;
+  height: 300px;
+  behavior: url(PIE.htc);
+  box-shadow: 5px 5px 30px #888888;
+
+  p {
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+  }
+}
+
+.reminders-widget {
+  border-color: #42dca3;
   border-style: solid;
   border-radius: 6px;
   display: inline-block;
   text-align: center;
+  float: right;
+  background-color: transparent;
+
 
   p {
     padding: 20px;
@@ -98,4 +126,35 @@ img.profile {
     border: 1px solid #aaaaaa;
     /* background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x; */
     // color: #222222;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+                url('http://sampsonresume.com/labs/pIkfp.gif')
+                50% 50%
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
 }

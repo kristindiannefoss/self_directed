@@ -2,11 +2,7 @@
   <div class="row">
     <div class="task-list">
       <table class="table">
-        <tr>
-          <th><h2>My Tasks</h2></th>
-          <th><h2></h2></th>
-          <th><h2></h2></th>
-        </tr>
+        <h2>Sensei Remind Me:</h2>
         <% @tasks.each do |task|%>
         <tr>
           <td><p><%= task.description %></p></td>
@@ -15,6 +11,44 @@
         </tr>
         <% end %>
       </table>
+      <div class="center">
+        <a href= "<%= new_task_path(current_user) %>" class="btn btn-default btn-lg">Add Tasks</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-md-6 commits-widget draggable ui-widget-content" id="draggable">
+      <div class="commits">
+        <div class="title">
+          <h2>Git Tracker</h2>
+        </div>
+        <div class="today-count">
+          <h1>4<%#= @commits %></h1>
+        </div>
+        <div class="commit-text">r
+          <p>
+            Commits Today
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 pic-thumb">
+      <div class="circle format-profile-pic ui-widget-content" id="draggable">
+        <div class="title">
+          <h2>Git Tracker</h2>
+        </div>
+        <div class="today-count">
+          <h1>4<%#= @commits %></h1>
+        </div>
+        <div class="commit-text">
+          <p>
+            Commits Today
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>

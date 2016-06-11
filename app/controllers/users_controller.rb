@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @greeting = format_greating
     # @temp = temp
     @commits = current_user_todays_commits
+    @tasks = @user.tasks
   end
 
 private

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_user
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :get_yoda_speak
   attr_reader :app_user, :current_user
 
   def current_user
@@ -17,4 +17,10 @@ class ApplicationController < ActionController::Base
   def set_user
     @app_user = current_user
   end
+
+  def get_yoda_speak(sentence)
+    yoda = YodaService.new
+    yoda.speak(sentence)
+  end
+
 end

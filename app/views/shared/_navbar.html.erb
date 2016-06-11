@@ -9,8 +9,16 @@
         <i class="fa fa-bars"></i>
       </button>
       <a class="navbar-brand page-scroll" href="#page-top">
-        <i class="fa fa-play-circle"></i>  <span class="light"><a class="page-scroll" href=""></a></span>
       </a>
+        <% if current_user %>
+        <i class="fa fa-play-circle"></i>  <span class="light">
+           <%= link_to "Dashboard", dashboard_path(current_user), class: "navbar-brand page-scroll" %>
+           <%= link_to "Reminders", tasks_path(current_user), class: "navbar-brand page-scroll" %>
+           <%= link_to "Pace Setters", "#", class: "navbar-brand page-scroll" %>
+           <%= link_to "Meetups", "#", class: "navbar-brand page-scroll" %>
+        <% end %>
+        </a></span>
+          </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

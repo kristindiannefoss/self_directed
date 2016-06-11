@@ -17,6 +17,7 @@ gem 'omniauth'
 gem 'nokogiri'
 gem 'hurley'
 gem 'unirest'
+gem "google_visualr", ">= 2.5"
 
 
 group :development, :test do
