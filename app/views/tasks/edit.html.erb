@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="instructions">
+      <h2>Edit your request</h2>
+      <p>
+         Be polite and use complete sentences:
+      </p>
+    </div>
+    <div class="new-task-form">
+      <%= form_for @task, url: {:controller=>'tasks', :action=>'edit'} do |f| %>
+      <div class="form-group">
+        <%= f.text_field :description, class:"form-control"%>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Update Task", class: "btn btn-default btn-lg" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
