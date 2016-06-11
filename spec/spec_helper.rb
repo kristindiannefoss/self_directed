@@ -7,10 +7,8 @@ require 'launchy'
 require 'pry'
 require 'vcr'
 require 'factory_girl'
-require 'support/factory_girl'
 
 SimpleCov.start("rails")
-
 
 RSpec.configure do |config|
 

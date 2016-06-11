@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :tasks
-  
+
   def self.create_from_omniauth(auth_hash)
     self.create(
                 token: auth_hash['credentials']['token'],
@@ -22,6 +22,5 @@ class User < ActiveRecord::Base
   # def create_followers_url
   #   "https://github.com/" + "#{self.user_name}" + "/followers"
   # end
-
 
 end

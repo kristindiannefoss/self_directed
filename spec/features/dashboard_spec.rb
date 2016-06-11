@@ -1,10 +1,7 @@
 # require 'rails_helper'
 #
 # describe 'GithubService' do
-#
 #   before do
-#     visit root_path
-#     click_on "Login With Github"
 #     user = User.create(
 #                     :uid => "15794034",
 #                     :token => "87f3add921d2843c62815c638487b244f2cb0973",
@@ -12,7 +9,6 @@
 #                     :name => "Kristin Foss",
 #                     :image => "https://avatars.githubusercontent.com/u/15794034?v=3",
 #                     :location => "Denver, Colorado")
-#     @service = GithubService.new(user)
 #   end
 #
 #   context "info" do

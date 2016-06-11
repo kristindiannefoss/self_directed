@@ -5,8 +5,8 @@ class NokogiriService
 
   attr_reader :noko_doc
 
-  def initialize(current_user)
-    @noko_doc = Nokogiri::HTML(open("https://github.com/#{current_user.user_name}"))
+  def initialize(user)
+    @noko_doc = Nokogiri::HTML(open("https://github.com/#{user.user_name}"))
   end
 
   def todays_commits

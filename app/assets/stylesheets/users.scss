@@ -6,18 +6,23 @@
   display: inline-block;
   float: left;
   margin: 30px;
+  behavior: url(PIE.htc);
+  border-radius: 50% !important;
 }
 
 .format-profile-pic {
   width: 300px;
   height: 300px;
-  border-radius: 6px;
+  border-radius: 50% !important;
+  behavior: url(PIE.htc);
   display: inline-block;
 }
 
 img.profile {
   width: 100%;
   height: 100%;
+  border-radius: 50% !important;
+  behavior: url(PIE.htc);
   overflow: hidden;
   object-fit: cover;
   border-radius: 10px;
@@ -53,7 +58,6 @@ img.profile {
     margin: 0px;
     color: #42dca3;
   }
-
 }
 
 .commits-widget {
@@ -78,11 +82,11 @@ img.profile {
 }
 
 #draggable {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .draggable {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .ui-widget-content {

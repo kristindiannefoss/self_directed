@@ -1,32 +1,31 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user #User.find(params[:id])
     @name = @user.format_name
     @greeting = format_greating
-    @temp = temp
+    # @temp = temp
     @commits = current_user_todays_commits
-    # binding.pry
   end
 
 private
 
-  def temp
-    location = current_user.location.split.first
-    service = WeatherService.new
-    temperature = service.temp_info(location)
-  end
+  # def temp
+  #   location = current_user.location.split.first
+  #   service = WeatherService.new
+  #   temperature = service.temp_info(location)
+  # end
 
   def time_now
     Time.now.strftime("%H").to_i
   end
 
   def format_greating
-    if 5 < time_now && time_now < 12
+    if time_now < 12
       greeting = "morning"
     elsif  12 <= time_now && time_now < 17
       greeting = "afternoon"
-    elsif  17 <= time_now && time_now < 5
+    elsif  17 <= time_now
       greeting = "evening"
     end
     greeting
@@ -34,6 +33,11 @@ private
 
   def current_user_todays_commits
     noko_scrub = NokogiriService.new(current_user)
+    noko_scrub.todays_commits
+  end
+
+  def follow_user_todays_commits(user_to_follow)
+    noko_scrub = NokogiriService.new(user_to_follow)
     noko_scrub.todays_commits
   end
 

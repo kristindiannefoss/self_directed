@@ -1,1 +1,17 @@
-<%= @tasks %>
+<div class="container">
+  <div class="row">
+    <div class="task-list">
+      <table>
+        <tr>
+          <th><h2>My Tasks</h2></th>
+        </tr>
+        <% @tasks.each do |task|%>
+        <tr>
+          <td><p><%= task.description %></p></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+  </div>
+</div>
