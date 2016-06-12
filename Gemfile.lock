@@ -225,6 +225,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timepiece (0.4.0)
+      jquery-rails (>= 3.0.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -265,7 +267,7 @@ DEPENDENCIES
   figaro
   hurley
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (>= 3.0.0)
   launchy
   nokogiri
   omniauth
@@ -284,6 +286,7 @@ DEPENDENCIES
   simplecov
   spring
   test-unit
+  timepiece
   turbolinks
   uglifier (>= 1.3.0)
   unirest

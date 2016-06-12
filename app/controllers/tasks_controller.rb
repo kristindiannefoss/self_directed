@@ -6,6 +6,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @time = Time.now
   end
 
   def show

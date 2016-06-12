@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require timepiece
+
+$(function() {
+  $( "#draggable" ).draggable();
+  $( ".draggable" ).draggable();
+});

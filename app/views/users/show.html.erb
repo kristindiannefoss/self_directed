@@ -12,6 +12,7 @@
 
         <div class="col-md-6 weather-widget draggable ui-widget-content" id="draggable">
           <div class="filler">
+            <h1><%= timepiece( "America/#{current_user.format_city}", type: '12') %></h1>
             <h2>Good <%= @greeting %> Padawan</h2>
 
             <p>It's <%= @temp %>°F in <%= current_user.location %></p>
@@ -22,50 +23,75 @@
 
     <div class="row"><!-- 2nd row -->
 
-      <div class="commits-widget draggable ui-widget-content" id="draggable">
-        <div class="commits">
-          <div class="today-count">
-            <h1><%= @commits %></h1>
-          </div>
-          <div class="commit-text">
-            <p>
-              Commits Today
-            </p>
-          </div>
-        </div>
-      </div>
 
       <div class="inline-row">
 
-          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
-            <div class="filler">
-              <h2>Reminders:</h2>
-
-                <% @tasks.each do |task| %>
-                <p> <%= get_yoda_speak(task.description) %> </p>
-                <% end %>
-
+        <div class="commits-widget draggable ui-widget-content" id="draggable">
+          <div class="commits">
+            <div class="today-count">
+              <h1><%= @commits %></h1>
+            </div>
+            <div class="commit-text">
+              <p>
+                Commits Today
+              </p>
             </div>
           </div>
+        </div>
+
+        <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+          <div class="filler">
+            <h2>Reminders:</h2>
+
+              <% @tasks.each do |task| %>
+              <p> <%= get_yoda_speak(task.description) %> </p>
+              <% end %>
+
+          </div>
+        </div>
 
       </div>
     </div><!-- 2nd row -->
 
     <div class="row"><!-- 3rd row -->
-
       <div class="inline-row">
 
+        <h2>
+          <div class="timer draggable ui-widget-content", id="draggable">
+            <!-- <h2>Start Timer</h2> -->
+            <div class="time-format">Project<br>Timebox<br>
+
+              <span id="time"></span></div>
+            <p>
+              <input type="button" value="start" onclick="START();">
+            	<input type="button" value="stop" onclick="STOP();">
+            	<input type="button" value="reset" onclick="RESET()">
+            </p>
+          </div>
+        </h2>
+
+
+        <% if @commits == 0 %>
           <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
             <div class="filler">
-              <h2>Tough Love:</h2>
-              You know what you did
+              <h2>You Need Tough Love?</h2>
+              Work Harder, Do More, Complain Less
               <p>
                 <%= @insult %>
-
+              </p>
+            </div>
+          </div>
+        <% else %>
+          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+            <div class="filler">
+              <h2>Always Remember, Yoda Loves You</h2>
+              <p>
+                <%= @praise %>
               </p>
             </div>
           </div>
 
+        <% end %>
       </div>
     </div><!-- 3rd row -->
 

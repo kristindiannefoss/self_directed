@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
   def format_name
     self.name.split.first
   end
+
+  def format_city
+    self.location.split.first.gsub(",", "")
+  end
   #
   # def create_following_url
   #   "https://github.com/" + "#{self.user_name}" + "/following"
