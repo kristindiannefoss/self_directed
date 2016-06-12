@@ -4,18 +4,19 @@ class UsersController < ApplicationController
     @user = current_user #User.find(params[:id])
     @name = @user.format_name
     @greeting = format_greating
-    # @temp = temp
+    @temp = temp
     @commits = current_user_todays_commits
     @tasks = @user.tasks
+    @insult = insult_me
   end
 
 private
 
-  # def temp
-  #   location = current_user.location.split.first
-  #   service = WeatherService.new
-  #   temperature = service.temp_info(location)
-  # end
+  def temp
+    location = current_user.location.split.first
+    service = WeatherService.new
+    temperature = service.temp_info(location)
+  end
 
   def time_now
     Time.now.strftime("%H").to_i
@@ -40,6 +41,11 @@ private
   def follow_user_todays_commits(user_to_follow)
     noko_scrub = NokogiriService.new(user_to_follow)
     noko_scrub.todays_commits
+  end
+
+  def insult_me
+    noko = InsultNokogiriService.new
+    noko.todays_insult
   end
 
 end

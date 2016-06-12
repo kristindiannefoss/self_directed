@@ -19,6 +19,10 @@ test:
   <<: *default
   database: self_directed_test
 
+production:
+  <<: *default
+  database: self_directed_production
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

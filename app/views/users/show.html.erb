@@ -14,7 +14,7 @@
           <div class="filler">
             <h2>Good <%= @greeting %> Padawan</h2>
 
-            <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
+            <p>It's <%= @temp %>°F in <%= current_user.location %></p>
           </div>
         </div>
     </div> <!-- 1st row -->
@@ -49,9 +49,25 @@
           </div>
 
       </div>
-    </div>
+    </div><!-- 2nd row -->
 
-    </div> <!-- 2nd row -->
+    <div class="row"><!-- 3rd row -->
+
+      <div class="inline-row">
+
+          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+            <div class="filler">
+              <h2>Tough Love:</h2>
+              You know what you did
+              <p>
+                <%= @insult %>
+
+              </p>
+            </div>
+          </div>
+
+      </div>
+    </div><!-- 3rd row -->
+
   </div>
-</div>
 </div>
