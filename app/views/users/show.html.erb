@@ -11,37 +11,35 @@
         </div>
 
         <div class="col-md-6 weather-widget draggable ui-widget-content" id="draggable">
-          <h2>Good <%= @greeting %> Padawan</h2>
+          <div class="filler">
+            <h2>Good <%= @greeting %> Padawan</h2>
 
-          <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
+            <p>It's <%#= @temp %>°F in <%= current_user.location %></p>
+          </div>
         </div>
     </div> <!-- 1st row -->
 
 
     <div class="row"><!-- 2nd row -->
-      <div class="inline-row">
 
-          <div class="col-md-6 commits-widget draggable ui-widget-content" id="draggable">
-            <div class="commits">
-              <h2><%= @commits %></h2>
-              <p>commits today</p>
-            </div>
+      <div class="commits-widget draggable ui-widget-content" id="draggable">
+        <div class="commits">
+          <div class="today-count">
+            <h1>4<%#= @commits %></h1>
           </div>
-
-        <div class="col-md-4">
-
+          <div class="commit-text">
+            <p>
+              Commits Today
+            </p>
+          </div>
         </div>
-
       </div>
-    </div>
-
-<div class="row"> <!-- 3rd row -->
 
       <div class="inline-row">
 
           <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
-            <div class="reminders">
-              <h2>To Dos</h2>
+            <div class="filler">
+              <h2>Reminders:</h2>
 
                 <% @tasks.each do |task| %>
                 <p> <%= get_yoda_speak(task.description) %> </p>
@@ -49,10 +47,6 @@
 
             </div>
           </div>
-
-        <div class="col-md-4">
-
-        </div>
 
       </div>
     </div>
