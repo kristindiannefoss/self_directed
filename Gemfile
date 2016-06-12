@@ -17,6 +17,7 @@ gem 'omniauth'
 gem 'nokogiri'
 gem 'hurley'
 gem 'unirest'
+gem 'timepiece'
 
 
 
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers'
   gem 'faker'
+
 end
 
 group :production do

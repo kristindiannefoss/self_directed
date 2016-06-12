@@ -55,16 +55,41 @@
 
       <div class="inline-row">
 
-          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
-            <div class="filler">
-              <h2>Tough Love:</h2>
-              You know what you did
-              <p>
-                <%= @insult %>
 
-              </p>
-            </div>
-          </div>
+                <% if @commits == 0 %>
+                  <div class="col-md-8 praise-insult-widget draggable ui-widget-content" id="draggable">
+                    <div class="filler">
+                      <h2>You Need Tough Love?</h2>
+                      Work Harder, Do More, Complain Less
+                      <p>
+                        <%= @insult %>
+                      </p>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="col-md-8 praise-insult-widget draggable ui-widget-content" id="draggable">
+                    <div class="filler">
+                      <h2>Well Done, Yoda Loves You</h2>
+                      <p>
+                        <%= @praise %>
+                      </p>
+                    </div>
+                  </div>
+
+                <% end %>
+
+        <h2>
+        <div class="timer draggable ui-widget-content", id="draggable">
+          <div class="time-format">Project<br>Timebox<br>
+
+            <span id="time"></span></div>
+            <p>
+              <input type="button" value="start" onclick="START();">
+              <input type="button" value="stop" onclick="STOP();">
+              <input type="button" value="reset" onclick="RESET()">
+            </p>
+        </div>
+      </h2>
 
       </div>
     </div><!-- 3rd row -->
