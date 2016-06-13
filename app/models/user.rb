@@ -18,13 +18,5 @@ class User < ActiveRecord::Base
   def format_name
     self.name.split.first
   end
-  #
-  # def create_following_url
-  #   "https://github.com/" + "#{self.user_name}" + "/following"
-  # end
-  #
-  # def create_followers_url
-  #   "https://github.com/" + "#{self.user_name}" + "/followers"
-  # end
 
 end

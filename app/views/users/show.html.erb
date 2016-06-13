@@ -53,18 +53,51 @@
 
     <div class="row"><!-- 3rd row -->
 
+<% if @commits == 0 %>
       <div class="inline-row">
-
-          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+          <div class="col-md-8 praise-insult-widget draggable ui-widget-content" id="draggable">
             <div class="filler">
-              <h2>Tough Love:</h2>
-              You know what you did
+              <h2>You Need Tough Love</h2>
+
+              <p>
+                Work harder, be better, do more
+              </p>
               <p>
                 <%= @insult %>
-
               </p>
             </div>
           </div>
+      </div>
+
+<% else %>
+      <div class="inline-row">
+          <div class="col-md-8 praise-insult-widget draggable ui-widget-content" id="draggable">
+            <div class="filler">
+              <h2>Well Done.</h2>
+
+              <p>Approves, Yoda Does</p>
+              <p>
+                <%= @praise %>
+              </p>
+            </div>
+          </div>
+      </div>
+<% end %>
+
+      <div class="timer ui-widget-content draggable" id="draggable">
+        <h2>Project Timeboxer</h2>
+
+        <table align="center" width="200" cellspacing="0">
+          <tr>
+             <td align="center">
+               <form name="clock"><br />
+               <input type="text" style="color: black" class="form-control" name="stwa" /><br />
+               <input type="button" name="theButton" class="btn btn-default btn-lg" onClick="stopwatch(this.value);" value="Start" />
+               <input type="button" value="Reset" class="btn btn-default btn-lg" onClick="resetIt();reset();" />
+               </form>
+             </td>
+          </tr>
+        </table>
 
       </div>
     </div><!-- 3rd row -->
