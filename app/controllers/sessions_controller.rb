@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(uid: auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     if @user
          session[:user_id] = @user.id
-         redirect_to dashboard_path(@user)
+         redirect_to root_path
     else
-         redirect_to root_url
+         redirect_to root_path
     end
   end
 
