@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "dashboard page", type: :feature do
-  it "displays greeting box" do
+describe "NokogiriService" do
+  before do
     @user = User.create(
                     :uid => "15794033",
                     :token => "87f3add921d2843c62815c638487b244f2cb0973",
@@ -11,12 +11,13 @@ RSpec.describe "dashboard page", type: :feature do
                     :location => "Denver, Colorado")
 
     ApplicationController.any_instance.stub(:current_user).and_return(@user)
-
-    visit dashboard_path(@user)
-
-    # expect(page).to have_content("°F in #{@user.location}")
+    
+    @service = NokogiriService.new(@user)
   end
 
-end
+    it "gets a number of commits from webpage" do
+        noko1 = @service.todays_commits
+        expect(noko1).to be_a(Integer)
+    end
 
-# visit dashboard_path(user)
+end

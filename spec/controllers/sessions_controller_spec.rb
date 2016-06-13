@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "dashboard page", type: :feature do
-  it "displays greeting box" do
+RSpec.describe SessionsController, type: :controller do
+
+  before do
     @user = User.create(
                     :uid => "15794033",
                     :token => "87f3add921d2843c62815c638487b244f2cb0973",
@@ -11,12 +12,12 @@ RSpec.describe "dashboard page", type: :feature do
                     :location => "Denver, Colorado")
 
     ApplicationController.any_instance.stub(:current_user).and_return(@user)
+  end
 
-    visit dashboard_path(@user)
-
-    # expect(page).to have_content("°F in #{@user.location}")
+  describe "GET new" do
+    it "starts a session with login"
+      get :create
+      
   end
 
 end
-
-# visit dashboard_path(user)

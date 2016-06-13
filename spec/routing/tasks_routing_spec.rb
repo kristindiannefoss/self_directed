@@ -4,7 +4,14 @@ RSpec.describe "routing to tasks", :type => :routing do
 
   before(:each) do
       @controller = TasksController.new
-      @user = User.create!(user_name: "jsmith")
+      @user = User.create(
+                      :uid => "15794034",
+                      :token => "87f3add921d2843c62815c638487b244f2cb0973",
+                      :user_name => "johnsmith",
+                      :name => "John Smith",
+                      :image => "https://avatars.githubusercontent.com/u/15794034?v=3",
+                      :location => "Denver, Colorado")
+
       @task1, @task2 = @user.tasks.create!, @user.tasks.create!
     end
 
@@ -36,22 +43,6 @@ RSpec.describe "routing to tasks", :type => :routing do
     expect(:get => "/user/#{@user.id}/tasks/#{@task1.id}/edit").to route_to(
       :controller => "tasks",
       :action => "edit",
-      :id => "#{@task1.id}"
-    )
-  end
-
-  it "routes to tasks#update for user" do
-    expect(:patch => "/user/#{@user.id}/tasks/#{@task1.id}").to route_to(
-      :controller => "tasks",
-      :action => "update",
-      :id => "#{@task1.id}"
-    )
-  end
-
-  it "routes to tasks#show for user" do
-    expect(:get => "/user/#{@user.id}/tasks/#{@task1.id}").to route_to(
-      :controller => "tasks",
-      :action => "show",
       :id => "#{@task1.id}"
     )
   end

@@ -13,9 +13,8 @@
         <% if current_user %>
         <i class="fa fa-play-circle"></i>  <span class="light">
            <%= link_to "Dashboard", dashboard_path(current_user), class: "navbar-brand page-scroll" %>
-           <%= link_to "Reminders", tasks_path(current_user), class: "navbar-brand page-scroll" %>
+           <%= link_to "Tasks", tasks_path(current_user), class: "navbar-brand page-scroll" %>
            <%= link_to "Pace Setters", "#", class: "navbar-brand page-scroll" %>
-           <%= link_to "Meetups", "#", class: "navbar-brand page-scroll" %>
         <% end %>
         </a></span>
           </a>
