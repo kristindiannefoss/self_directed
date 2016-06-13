@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user #User.find(params[:id])
+    # @user = current_user #
+
+    @user = User.find(params[:id])
     @name = @user.format_name
     @greeting = format_greating
     @temp = temp
