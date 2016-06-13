@@ -52,21 +52,26 @@
     </div><!-- 2nd row -->
 
     <div class="row"><!-- 3rd row -->
-
-      <div class="inline-row">
-
-          <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
-            <div class="filler">
-              <h2>Tough Love:</h2>
-              You know what you did
-              <p>
-                <%= @insult %>
-
-              </p>
-            </div>
+      <% if @commits == 0 %>
+        <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+          <div class="filler">
+            <h2>You Need Tough Love?</h2>
+            Work Harder, Do More, Complain Less
+            <p>
+              <%= @insult %>
+            </p>
           </div>
-
-      </div>
+        </div>
+      <% else %>
+        <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
+          <div class="filler">
+            <h2>Good Work, Yoda Approves</h2>
+            <p>
+              <%= @praise %>
+            </p>
+          </div>
+        </div>
+        <% end %>
     </div><!-- 3rd row -->
 
   </div>

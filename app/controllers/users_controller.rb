@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @commits = current_user_todays_commits
     @tasks = @user.tasks
     @insult = insult_me
+    @praise = praise_me
   end
 
 private
@@ -46,6 +47,11 @@ private
   def insult_me
     noko = InsultNokogiriService.new
     noko.todays_insult
+  end
+
+  def praise_me
+    noko = PraiseNokogiriService.new
+    noko.todays_praise
   end
 
 end
