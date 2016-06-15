@@ -1,23 +1,100 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe SessionsController, type: :controller do
+describe SessionsController, type: :controller do
 
   before do
-    @user = User.create(
-                    :uid => "15794033",
-                    :token => "87f3add921d2843c62815c638487b244f2cb0973",
-                    :user_name => "johnsmith",
-                    :name => "John Smith",
-                    :image => "https://avatars.githubusercontent.com/u/15794034?v=3",
-                    :location => "Denver, Colorado")
-
-    ApplicationController.any_instance.stub(:current_user).and_return(@user)
+    request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
   end
 
-  describe "GET new" do
-    it "starts a session with login"
-      get :create
-      
+  describe "#create" do
+
+    it "should successfully create a user" do
+      expect {
+        post :create, provider: :github
+      }.to change{ User.count }.by(1)
+    end
+
+    it "should successfully create a session" do
+      session[:user_id].should be_nil
+      post :create, provider: :github
+      session[:user_id].should_not be_nil
+    end
+
+    it "should redirect the user to the root url" do
+      post :create, provider: :github
+      response.should redirect_to root_url
+    end
+
+  end
+
+  describe "#destroy" do
+    before do
+      post :create, provider: :github
+    end
+
+    it "should clear the session" do
+      session[:user_id].should_not be_nil
+      delete :destroy
+      session[:user_id].should be_nil
+    end
+
+    it "should redirect to the home page" do
+      delete :destroy
+      response.should redirect_to root_url
+    end
   end
 
 end
+
+
+
+
+
+
+
+# require 'spec_helper'
+# # require 'sessions_controller'
+#
+# RSpec.describe SessionsController, type: :controller do
+#
+#   before do
+#     request.env['omniauth.auth'] = OmniAuth.config.mock_auth
+#   end
+#
+#   describe "#create" do
+#
+#     it "should make a new yser and save to the database" do
+#       expect {
+#         post :create
+#       }.to change{ User.count }.by(1)
+#     end
+#
+#     it "should create session on user login" do
+#       session[:user_id].should be_nil
+#       post :create
+#       session[:user_id].should_not be_nil
+#     end
+#
+#     it "should redirect the user to the root url" do
+#       post :create
+#       response.should redirect_to root_url
+#     end
+#   end
+#
+#   describe "#destroy" do
+#     before do
+#       post :create
+#     end
+#
+#     it "should clear the session" do
+#       session[:user_id].should_not be_nil
+#       delete :destroy
+#       session[:user_id].should be_nil
+#     end
+#
+#     it "should redirect to the home page" do
+#       delete :destroy
+#       response.should redirect_to root_url
+#     end
+#   end
+# end

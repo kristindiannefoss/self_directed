@@ -5,14 +5,14 @@ class TasksController < ApplicationController
   attr_reader :user
 
   def index
-    @tasks = Task.all
+    @tasks = user.tasks.all
   end
 
   def show
   end
 
   def new
-    @task = Task.new
+    @task = user.tasks.new
   end
 
   def create

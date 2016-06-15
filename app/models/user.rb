@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tasks
+  
   validates_presence_of :uid
-  validates_uniqueness_of :uid
   validates_presence_of :token
   validates_presence_of :user_name
 
