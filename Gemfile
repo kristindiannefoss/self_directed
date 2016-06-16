@@ -17,6 +17,7 @@ gem 'omniauth'
 gem 'nokogiri'
 gem 'hurley'
 gem 'unirest'
+gem 'timepiece'
 
 
 

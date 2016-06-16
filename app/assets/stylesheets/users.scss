@@ -1,6 +1,19 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'timepiece';
+
+.clock {
+  h1 {
+    padding-top: 20px;
+  }
+}
+.greeting {
+  text-align: center;
+}
+
+
 .timer {
   border-radius: 50%;
   border-color: white;

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :tasks
-  
+
   validates_presence_of :uid
   validates_presence_of :token
   validates_presence_of :user_name
@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 
   def format_name
     self.name.split.first
+  end
+
+  def format_city
+    self.location.split.first.gsub(",", "")
   end
 
 end
