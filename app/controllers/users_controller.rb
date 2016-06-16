@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 
   def show
-    # @user = current_user #
-
     @user = User.find(params[:id])
     @name = @user.format_name
     @greeting = format_greating
@@ -16,7 +14,7 @@ class UsersController < ApplicationController
 private
 
   def temp
-    location = current_user.location.split.first
+    location = @user.location.split.first
     service = WeatherService.new
     temperature = service.temp_info(location)
   end
@@ -37,12 +35,7 @@ private
   end
 
   def current_user_todays_commits
-    noko_scrub = NokogiriService.new(current_user)
-    noko_scrub.todays_commits
-  end
-
-  def follow_user_todays_commits(user_to_follow)
-    noko_scrub = NokogiriService.new(user_to_follow)
+    noko_scrub = NokogiriService.new(@user)
     noko_scrub.todays_commits
   end
 

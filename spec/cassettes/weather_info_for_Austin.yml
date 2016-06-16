@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=7c7ca0ee9169c5ebdc6f29564d19b7e0&q=Austin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 15 Jun 2016 22:48:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '451'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=7c7ca0ee9169c5ebdc6f29564d19b7e0&q=austin"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-97.74,"lat":30.27},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"cmc stations","main":{"temp":307.34,"pressure":1010,"humidity":49,"temp_min":305.37,"temp_max":308.15},"wind":{"speed":0.51,"deg":82,"gust":4.63},"rain":{},"clouds":{"all":0},"dt":1466030724,"sys":{"type":3,"id":9776,"message":0.0034,"country":"US","sunrise":1465990138,"sunset":1466040881},"id":4671654,"name":"Austin","cod":200}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 22:48:13 GMT
+recorded_with: VCR 3.0.3

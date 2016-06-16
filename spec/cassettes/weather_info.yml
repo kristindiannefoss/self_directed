@@ -21,11 +21,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Thu, 09 Jun 2016 21:51:53 GMT
+      - Wed, 15 Jun 2016 22:45:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '438'
+      - '443'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -39,7 +39,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"coord":{"lon":-104.98,"lat":39.74},"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"base":"stations","main":{"temp":305.18,"pressure":1003,"humidity":21,"temp_min":302.04,"temp_max":307.59},"wind":{"speed":1.54,"deg":49,"gust":3.6},"clouds":{"all":0},"dt":1465508544,"sys":{"type":3,"id":35615,"message":0.0305,"country":"US","sunrise":1465471890,"sunset":1465525661},"id":5419384,"name":"Denver","cod":200}'
+        sky","icon":"01d"}],"base":"cmc stations","main":{"temp":304.29,"pressure":1011,"humidity":15,"temp_min":299.25,"temp_max":306.55},"wind":{"speed":2.06,"deg":73,"gust":4.63},"clouds":{"all":0},"dt":1466030147,"sys":{"type":3,"id":35615,"message":0.0092,"country":"US","sunrise":1465990286,"sunset":1466044212},"id":5419384,"name":"Denver","cod":200}'
     http_version: 
-  recorded_at: Thu, 09 Jun 2016 21:51:52 GMT
+  recorded_at: Wed, 15 Jun 2016 22:45:55 GMT
 recorded_with: VCR 3.0.3

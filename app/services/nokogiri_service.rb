@@ -2,7 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class NokogiriService
-
   attr_reader :noko_doc
 
   def initialize(user)

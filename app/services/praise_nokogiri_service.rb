@@ -7,7 +7,6 @@ class PraiseNokogiriService
 
   def initialize
     @praise_noko_doc = Nokogiri::HTML(open('http://www.madsci.org/cgi-bin/cgiwrap/~lynn/jardin/SCG'))
-
   end
 
   def todays_praise

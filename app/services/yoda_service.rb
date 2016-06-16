@@ -20,7 +20,6 @@ class YodaService
   end
 
   private
-
     def format(sentence)
       sentence.gsub(" ", "+")
     end
