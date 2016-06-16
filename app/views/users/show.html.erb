@@ -1,12 +1,10 @@
-
 <div class="container">
   <div class="dash-chunk">
 <div class="row">
   <div class="greeting">
-    <p>* Customize your dash and drag your widgets if you fancy</p>
+    <p>* Customize your dash and drag your widgets if you fancy *</p>
 
   </div>
-
 </div>
 
     <div class="row"><!-- 1st row -->
@@ -18,7 +16,8 @@
         </div>
 
         <div class="col-md-6 weather-widget draggable ui-widget-content" id="draggable">
-          <div class="filler">
+          <div class="filler clock">
+            <h1><%= timepiece( "America/#{current_user.format_city}", type: '12') %></h1>
             <h2>Good <%= @greeting %> Padawan</h2>
 
             <p>It's <%= @temp %>°F in <%= current_user.location %></p>
@@ -47,10 +46,14 @@
           <div class="col-md-8 reminders-widget draggable ui-widget-content" id="draggable">
             <div class="filler">
               <h2>Reminders:</h2>
+              <!-- <a href="" class="btn btn-default btn-lg yoda">Wake Yoda and Ask Him for Advice, (Be patient, he's very old)</a> -->
+              <%= button_to "Wake Yoda and Ask Him for Advice, (Be patient, he's very old)", my_tasks_path(@user), class:"btn btn-default btn-lg", method: :get %>
+              <div class="yoda" id="hide">
+                <%# @tasks.each do |task| %>
+                <p class="yoda"> <%#= get_yoda_speak(task.description) %> </p>
+                <%# end %>
+              </div>
 
-                <% @tasks.each do |task| %>
-                <p> <%= get_yoda_speak(task.description) %> </p>
-                <% end %>
 
             </div>
           </div>
@@ -98,7 +101,7 @@
           <tr>
              <td align="center">
                <form name="clock"><br />
-               <input type="text" style="color: black" class="form-control" value="00 : 00 : 00" name="stwa" /><br />
+               <input type="text" style="color: black;padding-left: 45px;font-size: 20px;padding-bottom: 6px;border-bottom-width: 21.111;" class="form-control" value="00 : 00 : 00" name="stwa" /><br />
                <input type="button" name="theButton" class="btn btn-default btn-lg" onClick="stopwatch(this.value);" value="Start" />
                <input type="button" value="Reset" class="btn btn-default btn-lg" onClick="resetIt();reset();" />
                </form>

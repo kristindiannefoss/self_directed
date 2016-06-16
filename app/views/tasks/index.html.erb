@@ -1,21 +1,26 @@
+
 <div class="container">
-  <div class="row">
-    <div class="task-list">
-      <table class="table">
-        <h2>Sensei Remind Me:</h2>
-        <% @tasks.each do |task|%>
-        <tr>
-          <td><p><%= task.description %></p></td>
-          <td><p> <%= link_to "Edit", edit_task_path(task), method: :get %> </p></td>
-          <td><p> <%= link_to "Delete", delete_task_path(task), method: :delete %> </p></td>
-        </tr>
-        <% end %>
-      </table>
-      <div class="center">
-        <a href= "<%= new_task_path(current_user) %>" class="btn btn-default btn-lg">Add Tasks</a>
+    <div class="yoda-pic">
+      <%= image_tag "yoda.jpg" %>
+    </div>
+
+    <div class="row">
+      <div class="task-list">
+
+        <table class="table">
+          <h2>Sensei Remind Me:</h2>
+          <% @tasks.each do |task|%>
+          <tr>
+            <td><p><%= get_yoda_speak(task.description) %></p></td>
+            <td><p> <%= link_to "Edit", edit_task_path(task), method: :get %> </p></td>
+            <td><p> <%= link_to "Delete", delete_task_path(task), method: :delete %> </p></td>
+          </tr>
+          <% end %>
+        </table>
       </div>
     </div>
 
-  </div>
-
+    <div class="center">
+      <a href= "<%= new_task_path(current_user) %>" class="btn btn-default btn-lg">Add Tasks</a>
+    </div>
 </div>
