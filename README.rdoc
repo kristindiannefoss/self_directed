@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is student project that explores consuming an external api.  It serves as a developer dashboard.  It uses Oauth through Github, jquery with css for draggable functionality, a yoda syntax api, a weather api, and several sources that Nokogiri scrapes information from to bring in random inforamtion.  
 
-Things you may want to cover:
+It utilizes a postgres database and is deployed on Heroku.  The test suite is an Rspec suite that can be run with the command "rspec", once the gem file has been bundled.  
 
-* Ruby version
+The original assignment requirements can be found here: "https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/self_directed_project.md"
 
-* System dependencies
+The app is hosted on heroku at "http://dev-grove-tough-love.herokuapp.com/"
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
