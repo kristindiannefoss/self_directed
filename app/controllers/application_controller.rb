@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  skip_before_filter  :verify_authenticity_token
   before_action :set_user
   helper_method :current_user, :logged_in?, :get_yoda_speak
   attr_reader :app_user, :current_user
