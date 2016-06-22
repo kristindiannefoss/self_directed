@@ -15,10 +15,6 @@ class User < ActiveRecord::Base
                 location: auth_hash["extra"]["raw_info"]["location"])
   end
 
-  # def format_name
-  #   self.name.split.first
-  # end
-
   def format_city
     self.location.split.first.gsub(",", "")
   end

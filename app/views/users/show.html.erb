@@ -17,7 +17,7 @@
 
         <div class="col-md-6 weather-widget draggable ui-widget-content" id="draggable">
           <div class="filler clock">
-            <h1><%= timepiece( "America/#{current_user.format_city}", type: '12') %></h1>
+            <h1><%#= timepiece( "America/#{current_user.format_city}", type: '12') %></h1>
             <h2>Good <%= @greeting %> Padawan</h2>
 
             <p>It's <%= @temp %>°F in <%= current_user.location %></p>

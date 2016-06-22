@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @name = @user.user_name        #@user.format_name
+    @name = @user.user_name   
     @greeting = format_greating
     @temp = temp
     @commits = current_user_todays_commits
