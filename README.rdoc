@@ -2,7 +2,7 @@
 
 This is student project that explores consuming an external api.  It serves as a developer dashboard.  It uses Oauth through Github, jQuery with CSS for draggable functionality, a yoda syntax api, a weather api, and several sources that Nokogiri scrapes information from to bring in random insults or complements on a conditional based off of your daily Github commits.  
 
-It utilizes a postgres database and is deployed on Heroku.  The test suite is an Rspec suite that can be run with the command "rspec", once the gem file has been bundled.  
+It utilizes a PostgreSQL database and is deployed on Heroku.  The test suite is an Rspec suite that can be run with the command "rspec", once the gem file has been bundled.  
 
 The original assignment requirements can be found here: "https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/self_directed_project.md"
 
